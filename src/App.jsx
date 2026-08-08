@@ -1,11 +1,11 @@
-import MatchCard from "./Components/MatchCard";
+import MatchList from "./Components/MatchList";
 
 function App() {
   return (
     <div>
-      <h2>CourtConnect</h2>
+      <h1>CourtConnect</h1>
 
-      <MatchCard />
+      <MatchList />
     </div>
   );
 }
