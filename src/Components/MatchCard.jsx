@@ -1,10 +1,21 @@
-function MatchCard() {
+function MatchCard({ match }) {
   return (
     <div>
-      <h3>Tennis Match</h3>
-      <p>Location: Maryland Heights</p>
-      <p>Date: August 10, 2026</p>
-      <p>Players Needed: 2</p>
+      <h3>{match.sport} Match</h3>
+
+      <p>Location: {match.location}</p>
+
+      <p>Date: {match.date}</p>
+
+      <p>Time: {match.time}</p>
+
+      <p>Skill Level: {match.skillLevel}</p>
+
+      <p>Players Needed: {match.playersNeeded}</p>
+
+      <p>Maximum Players: {match.maxPlayers}</p>
+
+      <p>Organizer: {match.organizer}</p>
 
       <button>Join Match</button>
     </div>

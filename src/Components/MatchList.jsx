@@ -1,13 +1,14 @@
 import MatchCard from "./MatchCard";
+import { matches } from "../mockdata/matches";
 
 function MatchList() {
   return (
     <div>
       <h2>Available Matches</h2>
 
-      <MatchCard />
-      <MatchCard />
-      <MatchCard />
+      {matches.map((game) => (
+        <MatchCard key={game.id} match={game} />
+      ))}
     </div>
   );
 }
