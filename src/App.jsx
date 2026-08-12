@@ -2,6 +2,8 @@ import { useState } from "react";
 import MatchList from "./Components/MatchList";
 import CreateMatchForm from "./Components/CreateMatchForm";
 import { matches as initialMatches } from "./mockdata/matches";
+import CourtList from "./Components/CourtList";
+import { courts } from "./mockdata/courts";
 
 function App() {
   const [matches, setMatches] = useState(initialMatches);
@@ -64,6 +66,8 @@ function App() {
       </select>
 
       <MatchList games={filteredMatches} onJoinMatch={handleJoinMatch} />
+
+      <CourtList courts={courts} />
     </div>
   );
 }
