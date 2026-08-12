@@ -6,14 +6,14 @@ function CreateMatchForm({ onCreateMatch }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [skillLevel, setSkillLevel] = useState("");
-  const [playersNeeded, setPlayersNeeded] = useState("");
+  const [currentPlayers, setCurrentPlayers] = useState("");
   const [maxPlayers, setMaxPlayers] = useState("");
   const [organizer, setOrganizer] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    if (Number(playersNeeded) > Number(maxPlayers)) {
+    if (Number(currentPlayers) > Number(maxPlayers)) {
       alert("Players needed cannot be greater than maximum players");
       return;
     }
@@ -25,8 +25,8 @@ function CreateMatchForm({ onCreateMatch }) {
       date,
       time,
       skillLevel,
-      playersNeeded,
-      maxPlayers,
+      currentPlayers: Number(currentPlayers),
+      maxPlayers: Number(maxPlayers),
       organizer,
     };
 
@@ -37,7 +37,7 @@ function CreateMatchForm({ onCreateMatch }) {
     setDate("");
     setTime("");
     setSkillLevel("");
-    setPlayersNeeded("");
+    setCurrentPlayers("");
     setMaxPlayers("");
     setOrganizer("");
   }
@@ -102,17 +102,17 @@ function CreateMatchForm({ onCreateMatch }) {
 
       <p>Selected skill level: {skillLevel}</p>
 
-      <label>Players Needed:</label>
+      <label>Current Players:</label>
       <input
         type="number"
         min="1"
-        value={playersNeeded}
-        onChange={(event) => setPlayersNeeded(event.target.value)}
+        value={currentPlayers}
+        onChange={(event) => setCurrentPlayers(event.target.value)}
         placeholder="Number of players needed"
         required
       />
 
-      <p>Players needed: {playersNeeded}</p>
+      <p>Current Players: {currentPlayers}</p>
 
       <label>Maximum Players:</label>
       <input

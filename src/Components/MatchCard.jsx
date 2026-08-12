@@ -1,4 +1,11 @@
-function MatchCard({ match }) {
+function MatchCard({ match, onJoinMatch }) {
+  let buttonText = "Join Match";
+
+  if (match.joined) {
+    buttonText = "Joined!";
+  } else if (match.currentPlayers >= match.maxPlayers) {
+    buttonText = "Match Full";
+  }
   return (
     <div>
       <h3>{match.sport} Match</h3>
@@ -11,13 +18,18 @@ function MatchCard({ match }) {
 
       <p>Skill Level: {match.skillLevel}</p>
 
-      <p>Players Needed: {match.playersNeeded}</p>
-
-      <p>Maximum Players: {match.maxPlayers}</p>
+      <p>
+        Players: {match.currentPlayers} / {match.maxPlayers}
+      </p>
 
       <p>Organizer: {match.organizer}</p>
 
-      <button>Join Match</button>
+      <button
+        onClick={() => onJoinMatch(match.id)}
+        disabled={match.joined || match.currentPlayers >= match.maxPlayers}
+      >
+        {buttonText}
+      </button>
     </div>
   );
 }
