@@ -4,6 +4,7 @@ import CreateMatchForm from "./Components/CreateMatchForm";
 import { matches as initialMatches } from "./mockdata/matches";
 import CourtList from "./Components/CourtList";
 import { courts } from "./mockdata/courts";
+import "./App.css";
 
 function App() {
   const [matches, setMatches] = useState(initialMatches);

@@ -5,7 +5,12 @@ function CourtCard({ court }) {
 
       <p>Sport: {court.sport}</p>
 
-      <p>Status: {court.status}</p>
+      <p>
+        Status:{" "}
+        <span className={court.status === "Available" ? "available" : "booked"}>
+          {court.status}
+        </span>
+      </p>
     </div>
   );
 }
