@@ -1,0 +1,92 @@
+export const courts = [
+  {
+    id: 1,
+    name: "Court 1",
+    sport: "Tennis",
+    status: "Available",
+  },
+  {
+    id: 2,
+    name: "Court 2",
+    sport: "Tennis",
+    status: "Booked",
+  },
+  {
+    id: 3,
+    name: "Court 3",
+    sport: "Tennis",
+    status: "Available",
+  },
+  {
+    id: 4,
+    name: "Court 4",
+    sport: "Pickleball",
+    status: "Booked",
+  },
+  {
+    id: 5,
+    name: "Court 5",
+    sport: "Pickleball",
+    status: "Available",
+  },
+  {
+    id: 6,
+    name: "Court 6",
+    sport: "Pickleball",
+    status: "Available",
+  },
+  {
+    id: 7,
+    name: "Court 7",
+    sport: "Volleyball",
+    status: "Available",
+  },
+  {
+    id: 8,
+    name: "Court 8",
+    sport: "Volleyball",
+    status: "Booked",
+  },
+  {
+    id: 9,
+    name: "Court 9",
+    sport: "Volleyball",
+    status: "Available",
+  },
+  {
+    id: 10,
+    name: "Court 10",
+    sport: "Basketball",
+    status: "Booked",
+  },
+  {
+    id: 11,
+    name: "Court 11",
+    sport: "Basketball",
+    status: "Available",
+  },
+  {
+    id: 12,
+    name: "Court 12",
+    sport: "Basketball",
+    status: "Available",
+  },
+  {
+    id: 13,
+    name: "Court 13",
+    sport: "Soccer",
+    status: "Available",
+  },
+  {
+    id: 14,
+    name: "Court 14",
+    sport: "Soccer",
+    status: "Booked",
+  },
+  {
+    id: 15,
+    name: "Court 15",
+    sport: "Soccer",
+    status: "Available",
+  },
+];

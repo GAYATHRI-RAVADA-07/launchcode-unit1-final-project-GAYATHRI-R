@@ -1,0 +1,30 @@
+.available {
+  color: green;
+}
+
+.booked {
+  color: red;
+}
+
+.court-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.court-card h3 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+@media (max-width: 900px) {
+  .court-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .court-grid {
+    grid-template-columns: 1fr;
+  }
+}
