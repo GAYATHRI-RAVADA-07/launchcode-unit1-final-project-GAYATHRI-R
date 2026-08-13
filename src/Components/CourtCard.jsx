@@ -1,6 +1,6 @@
 function CourtCard({ court }) {
   return (
-    <div>
+    <div className="court-card">
       <h3>{court.name}</h3>
 
       <p>Sport: {court.sport}</p>
