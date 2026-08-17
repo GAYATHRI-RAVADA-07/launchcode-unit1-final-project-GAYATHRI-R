@@ -1,4 +1,7 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import Header from "./Components/Header";
+import Home from "./pages/Home";
 import MatchList from "./Components/MatchList";
 import CreateMatchForm from "./Components/CreateMatchForm";
 import { matches as initialMatches } from "./mockdata/matches";
@@ -42,34 +45,50 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>CourtConnect</h1>
+    <BrowserRouter>
+      <Header />
 
-      <CreateMatchForm onCreateMatch={handleCreateMatchForm} />
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-      <input
-        type="text"
-        placeholder="Search by sport..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+        <Route
+          path="/matches"
+          element={
+            <div>
+              <h1>CourtConnect</h1>
 
-      <label>Filter by Skill Level:</label>
+              <CreateMatchForm onCreateMatch={handleCreateMatchForm} />
 
-      <select
-        value={skillFilter}
-        onChange={(event) => setSkillFilter(event.target.value)}
-      >
-        <option value="">All Skill Levels</option>
-        <option value="Beginner">Beginner</option>
-        <option value="Intermediate">Intermediate</option>
-        <option value="Advanced">Advanced</option>
-      </select>
+              <input
+                type="text"
+                placeholder="Search by sport..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
 
-      <MatchList games={filteredMatches} onJoinMatch={handleJoinMatch} />
+              <label>Filter by Skill Level:</label>
 
-      <CourtList courts={courts} />
-    </div>
+              <select
+                value={skillFilter}
+                onChange={(event) => setSkillFilter(event.target.value)}
+              >
+                <option value="">All Skill Levels</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Advanced">Advanced</option>
+              </select>
+
+              <MatchList
+                games={filteredMatches}
+                onJoinMatch={handleJoinMatch}
+              />
+
+              <CourtList courts={courts} />
+            </div>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
