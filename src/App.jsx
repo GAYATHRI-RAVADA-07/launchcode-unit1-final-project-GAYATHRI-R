@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Header from "./Components/Header";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import MatchList from "./Components/MatchList";
 import CreateMatchForm from "./Components/CreateMatchForm";
 import { matches as initialMatches } from "./mockdata/matches";
@@ -50,6 +51,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+
+        <Route path="/about" element={<About />} />
 
         <Route
           path="/matches"
