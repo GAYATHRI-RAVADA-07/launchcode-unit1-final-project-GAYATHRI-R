@@ -55,8 +55,6 @@ function CreateMatchForm({ onCreateMatch }) {
         required
       />
 
-      <p>Selected sport: {sport}</p>
-
       <label>Location:</label>
       <input
         type="text"
@@ -66,8 +64,6 @@ function CreateMatchForm({ onCreateMatch }) {
         required
       />
 
-      <p>Selected location: {location}</p>
-
       <label>Date:</label>
       <input
         type="date"
@@ -76,8 +72,6 @@ function CreateMatchForm({ onCreateMatch }) {
         required
       />
 
-      <p>Selected date: {date}</p>
-
       <label>Time:</label>
       <input
         type="time"
@@ -85,8 +79,6 @@ function CreateMatchForm({ onCreateMatch }) {
         onChange={(event) => setTime(event.target.value)}
         required
       />
-
-      <p>Selected time: {time}</p>
 
       <label>Skill Level:</label>
       <select
@@ -100,8 +92,6 @@ function CreateMatchForm({ onCreateMatch }) {
         <option value="Advanced">Advanced</option>
       </select>
 
-      <p>Selected skill level: {skillLevel}</p>
-
       <label>Current Players:</label>
       <input
         type="number"
@@ -111,8 +101,6 @@ function CreateMatchForm({ onCreateMatch }) {
         placeholder="Number of players needed"
         required
       />
-
-      <p>Current Players: {currentPlayers}</p>
 
       <label>Maximum Players:</label>
       <input
@@ -124,8 +112,6 @@ function CreateMatchForm({ onCreateMatch }) {
         required
       />
 
-      <p>Maximum players: {maxPlayers}</p>
-
       <label>Organizer:</label>
       <input
         type="text"
@@ -134,8 +120,6 @@ function CreateMatchForm({ onCreateMatch }) {
         placeholder="Enter organizer name"
         required
       />
-
-      <p>Organizer: {organizer}</p>
 
       <button type="submit">Create Match</button>
     </form>
