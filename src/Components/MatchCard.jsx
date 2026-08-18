@@ -8,7 +8,7 @@ function MatchCard({ match, onJoinMatch }) {
   }
   return (
     <div>
-      <h3>{match.sport} Match</h3>
+      <h3>{match.sport}</h3>
 
       <p>Location: {match.location}</p>
 
