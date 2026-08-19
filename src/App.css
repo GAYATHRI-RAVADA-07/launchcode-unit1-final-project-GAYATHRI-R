@@ -137,7 +137,115 @@
   }
 }
 
-.available {
+.matches-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.matches-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.matches-header h1 {
+  margin-bottom: 0.75rem;
+}
+
+.matches-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.match-controls {
+  display: flex;
+  align-items: end;
+  gap: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+.match-controls input {
+  flex: 1;
+}
+
+.skill-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.skill-filter label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.match-controls input,
+.match-controls select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--white);
+}
+
+.create-match-button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.create-match-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.matches-list-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .matches-page {
+    padding: 3rem 1.5rem;
+  }
+
+  .match-controls {
+    flex-wrap: wrap;
+  }
+
+  .match-controls input {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .matches-page {
+    padding: 2rem 1rem;
+  }
+
+  .match-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .match-controls input {
+    width: auto;
+  }
+
+  .create-match-button {
+    width: 100%;
+  }
+}
+` .available {
   color: green;
 }
 

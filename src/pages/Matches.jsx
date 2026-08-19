@@ -41,34 +41,52 @@ function Matches() {
 
   return (
     <main className="matches-page">
-      <input
-        type="text"
-        placeholder="Search by sport..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+      <div className="matches-header">
+        <h1>Matches</h1>
+        <p>Find a game that matches your sport and skill level.</p>
+      </div>
 
-      <label>Filter by Skill Level:</label>
+      <div className="match-controls">
+        <input
+          type="text"
+          placeholder="Search by sport..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
 
-      <select
-        value={skillFilter}
-        onChange={(event) => setSkillFilter(event.target.value)}
-      >
-        <option value="">All Skill Levels</option>
-        <option value="Beginner">Beginner</option>
-        <option value="Intermediate">Intermediate</option>
-        <option value="Advanced">Advanced</option>
-      </select>
+        <div className="skill-filter">
+          <label htmlFor="skill-level">Skill Level</label>
 
-      <MatchList games={filteredMatches} onJoinMatch={handleJoinMatch} />
+          <select
+            id="skill-level"
+            value={skillFilter}
+            onChange={(event) => setSkillFilter(event.target.value)}
+          >
+            <option value="">All Skill Levels</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
 
-      <button type="button" onClick={() => setShowCreateForm(!showCreateForm)}>
-        {showCreateForm ? "cancel" : "Add New Match"}
-      </button>
+        <button
+          type="button"
+          className="create-match-button"
+          onClick={() => setShowCreateForm(!showCreateForm)}
+        >
+          {showCreateForm ? "Cancel" : "Create Match"}
+        </button>
+      </div>
 
       {showCreateForm && (
         <CreateMatchForm onCreateMatch={handleCreateMatchForm} />
       )}
+
+      <section className="matches-list-section">
+        <h2>Available Matches</h2>
+
+        <MatchList games={filteredMatches} onJoinMatch={handleJoinMatch} />
+      </section>
     </main>
   );
 }
