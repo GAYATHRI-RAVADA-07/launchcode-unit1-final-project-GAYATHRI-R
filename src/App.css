@@ -1,3 +1,5 @@
+/*Header and navigation*/
+
 .header {
   display: flex;
   align-items: center;
@@ -33,6 +35,8 @@
 .navigation a:hover {
   color: var(--primary);
 }
+
+/* Home page */
 
 .home-page {
   max-width: 1200px;
@@ -137,6 +141,8 @@
   }
 }
 
+/* Matches page */
+
 .matches-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -209,6 +215,8 @@
   background-color: var(--primary-dark);
 }
 
+/*Matches list*/
+
 .matches-list-section h2 {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -263,6 +271,61 @@
   .match-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/*Match card*/
+
+.match-card {
+  padding: 1.5rem;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.match-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+}
+
+.match-card h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 1.4rem;
+}
+
+.match-card p {
+  margin-bottom: 0.6rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.match-card button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.match-card button:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.match-card button:disabled {
+  background-color: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
 }
 
 .available {
