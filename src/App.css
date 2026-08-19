@@ -328,6 +328,75 @@
   cursor: not-allowed;
 }
 
+/*Create Match Form */
+
+.create-match-form {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.create-match-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.create-match-form label {
+  margin-top: 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.create-match-form input,
+.create-match-form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.create-match-form input:focus,
+.create-match-form select:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+.submit-match-button {
+  margin-top: 1.25rem;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-match-button:hover {
+  background-color: var(--primary-dark);
+}
+
+@media (max-width: 600px) {
+  .create-match-form {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+  }
+}
+
 .available {
   color: green;
 }

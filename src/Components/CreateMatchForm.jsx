@@ -43,7 +43,7 @@ function CreateMatchForm({ onCreateMatch }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="create-match-form" onSubmit={handleSubmit}>
       <h2>Create a Match</h2>
 
       <label>Sport:</label>
@@ -121,7 +121,9 @@ function CreateMatchForm({ onCreateMatch }) {
         required
       />
 
-      <button type="submit">Create Match</button>
+      <button className="submit-match-button" type="submit">
+        Create Match
+      </button>
     </form>
   );
 }
