@@ -515,23 +515,57 @@
   }
 }
 
-.available {
-  color: green;
-}
+/* Courts page*/
 
-.booked {
-  color: red;
+.courts-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
 .court-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 20px;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.court-card {
+  padding: 1.5rem;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.court-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
 }
 
 .court-card h3 {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 1.4rem;
+}
+
+.court-card p {
+  margin-bottom: 0.75rem;
+  color: var(--text-light);
+}
+
+.available {
+  color: #15803d;
+  font-weight: 700;
+}
+
+.booked {
+  color: #dc2626;
+  font-weight: 700;
 }
 
 @media (max-width: 900px) {
