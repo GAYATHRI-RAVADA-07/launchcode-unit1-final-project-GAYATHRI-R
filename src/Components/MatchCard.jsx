@@ -7,8 +7,8 @@ function MatchCard({ match, onJoinMatch }) {
     buttonText = "Match Full";
   }
   return (
-    <div>
-      <h3>{match.sport} Match</h3>
+    <div className="match-card">
+      <h3>{match.sport}</h3>
 
       <p>Location: {match.location}</p>
 
