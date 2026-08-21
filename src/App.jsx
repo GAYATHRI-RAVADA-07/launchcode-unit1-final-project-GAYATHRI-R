@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Courts from "./pages/Courts";
 import Matches from "./pages/Matches";
+import Profile from "./pages/Profile";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path="/courts" element={<Courts />} />
 
         <Route path="/matches" element={<Matches />} />
+
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );
