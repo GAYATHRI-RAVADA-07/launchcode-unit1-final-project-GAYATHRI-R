@@ -1,4 +1,4 @@
-import CourtList from "../components/CourtList";
+import CourtList from "../Components/CourtList";
 import { courts } from "../mockdata/courts";
 
 function Courts() {

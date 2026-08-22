@@ -26,14 +26,20 @@ function Profile() {
           </p>
         </div>
 
-        <div className="profile-info">
+        <div className="profile-info preferred-sports">
           <h2>Preferred Sports</h2>
 
-          <ul>
+          <div>
             {user.preferredSports.map((sport) => (
-              <li key={sport}>{sport}</li>
+              <span className="sport-tag" key={sport}>
+                {sport}
+              </span>
             ))}
-          </ul>
+          </div>
+
+          <button className="add-sport-button" type="button">
+            Add Sport
+          </button>
         </div>
 
         <div className="profile-info about-me">
