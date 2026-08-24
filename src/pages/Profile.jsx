@@ -29,7 +29,7 @@ function Profile() {
         <div className="profile-info preferred-sports">
           <h2>Preferred Sports</h2>
 
-          <div>
+          <div className="sports-tags">
             {user.preferredSports.map((sport) => (
               <span className="sport-tag" key={sport}>
                 {sport}
