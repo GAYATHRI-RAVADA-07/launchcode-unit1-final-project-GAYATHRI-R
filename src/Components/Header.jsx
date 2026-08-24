@@ -11,6 +11,7 @@ function Header() {
         <Link to="/matches">Matches</Link>
         <Link to="/courts">Courts</Link>
         <Link to="/about">About</Link>
+        <Link to="/profile">Profile</Link>
       </nav>
     </header>
   );

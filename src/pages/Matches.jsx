@@ -1,6 +1,6 @@
 import { useState } from "react";
-import MatchList from "../Components/MatchList";
-import CreateMatchForm from "../Components/CreateMatchForm";
+import MatchList from "../components/MatchList";
+import CreateMatchForm from "../components/CreateMatchForm";
 import { matches as initialMatches } from "../mockdata/matches";
 
 function Matches() {
