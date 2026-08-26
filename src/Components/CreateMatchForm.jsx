@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 function CreateMatchForm({ onCreateMatch }) {
+  const today = new Date().toISOString().split("T")[0];
+
   const [sport, setSport] = useState("");
   const [location, setLocation] = useState("");
   const [date, setDate] = useState("");
@@ -12,6 +14,11 @@ function CreateMatchForm({ onCreateMatch }) {
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    if (date < today) {
+      alert("Please select today or a future date.");
+      return;
+    }
 
     if (Number(currentPlayers) > Number(maxPlayers)) {
       alert("Players needed cannot be greater than maximum players");
@@ -68,6 +75,7 @@ function CreateMatchForm({ onCreateMatch }) {
       <input
         type="date"
         value={date}
+        min={today}
         onChange={(event) => setDate(event.target.value)}
         required
       />
