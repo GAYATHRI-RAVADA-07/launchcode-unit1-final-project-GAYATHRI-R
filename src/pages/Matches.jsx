@@ -12,7 +12,7 @@ function Matches() {
   function handleCreateMatchForm(newMatch) {
     setMatches((currentMatches) => [...currentMatches, newMatch]);
   }
-
+  const today = new Date();
   const filteredMatches = matches.filter((game) => {
     const matchesSearch = game.sport
       .toLowerCase()
@@ -20,7 +20,10 @@ function Matches() {
 
     const matchesSkill = skillFilter === "" || game.skillLevel === skillFilter;
 
-    return matchesSearch && matchesSkill;
+    const matchDate = new Date(game.date);
+    const matchesDate = matchDate >= today;
+
+    return matchesSearch && matchesSkill && matchesDate;
   });
 
   function handleJoinMatch(matchId) {
