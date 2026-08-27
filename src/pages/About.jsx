@@ -2,7 +2,7 @@ function About() {
   return (
     <main className="about-page">
       <section className="about-hero">
-        <h2>About CourtConnect</h2>
+        <h1>About CourtConnect</h1>
 
         <p>
           Making it easier to find a game, meet players, and get on the court.
