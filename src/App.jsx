@@ -6,6 +6,7 @@ import Courts from "./pages/Courts";
 import Matches from "./pages/Matches";
 import Profile from "./pages/Profile";
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
 
         <Route path="/profile" element={<Profile />} />
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   );
 }

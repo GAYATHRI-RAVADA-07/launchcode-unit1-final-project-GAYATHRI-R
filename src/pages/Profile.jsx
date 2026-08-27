@@ -36,21 +36,12 @@ function Profile() {
               </span>
             ))}
           </div>
-
-          <button className="add-sport-button" type="button">
-            Add Sport
-          </button>
         </div>
 
         <div className="profile-info about-me">
           <h2>About Me</h2>
 
           <p>{user.aboutMe}</p>
-        </div>
-
-        <div className="profile-action">
-          <button type="button">Settings</button>
-          <button type="button">Logout</button>
         </div>
       </section>
     </main>
