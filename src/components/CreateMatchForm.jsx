@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "./Button";
 
 function CreateMatchForm({ onCreateMatch }) {
   const today = new Date().toISOString().split("T")[0];
@@ -129,9 +130,9 @@ function CreateMatchForm({ onCreateMatch }) {
         required
       />
 
-      <button className="submit-match-button" type="submit">
+      <Button  type="submit">
         Create Match
-      </button>
+      </Button>
     </form>
   );
 }

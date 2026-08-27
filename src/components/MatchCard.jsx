@@ -1,3 +1,4 @@
+import Button from "./Button";
 function MatchCard({ match, onJoinMatch }) {
   let buttonText = "Join Match";
 
@@ -24,12 +25,13 @@ function MatchCard({ match, onJoinMatch }) {
 
       <p>Organizer: {match.organizer}</p>
 
-      <button
+      <Button
+        className="button-full"
         onClick={() => onJoinMatch(match.id)}
         disabled={match.joined || match.currentPlayers >= match.maxPlayers}
       >
         {buttonText}
-      </button>
+      </Button>
     </div>
   );
 }

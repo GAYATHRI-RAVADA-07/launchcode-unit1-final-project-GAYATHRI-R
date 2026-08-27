@@ -2,6 +2,7 @@ import { useState } from "react";
 import MatchList from "../components/MatchList";
 import CreateMatchForm from "../components/CreateMatchForm";
 import { matches as initialMatches } from "../mockdata/matches";
+import Button from "../components/Button";
 
 function Matches() {
   const [matches, setMatches] = useState(initialMatches);
@@ -12,19 +13,20 @@ function Matches() {
   function handleCreateMatchForm(newMatch) {
     setMatches((currentMatches) => [...currentMatches, newMatch]);
   }
-  const today = new Date();
+  const today = new Date().toISOString().split("T")[0];
+
   const filteredMatches = matches.filter((game) => {
-    const matchesSearch = game.sport
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+  const matchesSearch = game.sport
+    .toLowerCase()
+    .includes(searchTerm.toLowerCase());
 
-    const matchesSkill = skillFilter === "" || game.skillLevel === skillFilter;
+  const matchesSkill =
+    skillFilter === "" || game.skillLevel === skillFilter;
 
-    const matchDate = new Date(game.date);
-    const matchesDate = matchDate >= today;
+  const matchesDate = game.date >= today;
 
-    return matchesSearch && matchesSkill && matchesDate;
-  });
+  return matchesSearch && matchesSkill && matchesDate;
+});
 
   function handleJoinMatch(matchId) {
     setMatches((currentMatches) =>
@@ -72,13 +74,11 @@ function Matches() {
           </select>
         </div>
 
-        <button
-          type="button"
-          className="create-match-button"
+        <Button
           onClick={() => setShowCreateForm(!showCreateForm)}
         >
           {showCreateForm ? "Cancel" : "Create Match"}
-        </button>
+        </Button>
       </div>
 
       {showCreateForm && (
