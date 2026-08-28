@@ -1,13 +1,21 @@
+import heroImage from "../assets/hero.png";
 function Home() {
   return (
     <main className="home-page">
       <section className="hero-section">
-        <h1>Welcome to CourtConnect</h1>
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1>Welcome to CourtConnect</h1>
 
-        <p>
-          Find courts, discover and create matches, and connect with players
-          near you.
-        </p>
+            <p>
+              Find courts, discover and create matches, and connect with players
+              near you.
+            </p>
+          </div>
+          <div className="hero-image">
+            <img src={heroImage} alt="CourtConnect players" />``
+          </div>
+        </div>
       </section>
 
       <section className="features-section">
