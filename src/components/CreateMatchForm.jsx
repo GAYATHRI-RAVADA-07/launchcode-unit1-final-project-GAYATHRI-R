@@ -12,19 +12,22 @@ function CreateMatchForm({ onCreateMatch }) {
   const [currentPlayers, setCurrentPlayers] = useState("");
   const [maxPlayers, setMaxPlayers] = useState("");
   const [organizer, setOrganizer] = useState("");
+  const [error, setError] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
 
     if (date < today) {
-      alert("Please select today or a future date.");
+      setError("Please select today or a future date.");
       return;
     }
 
     if (Number(currentPlayers) > Number(maxPlayers)) {
-      alert("Players needed cannot be greater than maximum players");
+      setError("Players needed cannot be greater than maximum players");
       return;
     }
+
+    setError("");
 
     const newMatch = {
       id: Date.now(),
@@ -51,7 +54,18 @@ function CreateMatchForm({ onCreateMatch }) {
   }
 
   return (
-    <form className="create-match-form" onSubmit={handleSubmit}>
+    <div>
+      {error && ( 
+        <div className="modal-overlay"> 
+          <div className="modal"> 
+          <h2>Invalid Match</h2> 
+          <p>{error}</p> 
+          <Button onClick={() => setError("")}>Close</Button> 
+          </div> 
+        </div>
+      )}
+      
+      <form className="create-match-form" onSubmit={handleSubmit}>
       <h2>Create a Match</h2>
 
       <label>Sport:</label>
@@ -133,7 +147,10 @@ function CreateMatchForm({ onCreateMatch }) {
       <Button  type="submit">
         Create Match
       </Button>
-    </form>
+     </form>
+
+    </div>
+    
   );
 }
 
