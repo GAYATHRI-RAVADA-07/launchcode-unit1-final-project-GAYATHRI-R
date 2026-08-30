@@ -5,16 +5,19 @@ import { matches as initialMatches } from "../mockdata/matches";
 import Button from "../components/Button";
 
 function Matches() {
+  // Store matches, search/filter values, and form visibility
   const [matches, setMatches] = useState(initialMatches);
   const [searchTerm, setSearchTerm] = useState("");
   const [skillFilter, setSkillFilter] = useState("");
   const [showCreateForm, setShowCreateForm] = useState(false);
 
+  // Add the newly created match to the existing matches
   function handleCreateMatchForm(newMatch) {
     setMatches((currentMatches) => [...currentMatches, newMatch]);
   }
   const today = new Date().toISOString().split("T")[0];
 
+  // Show only future matches that match the search and selected skill level
   const filteredMatches = matches.filter((game) => {
   const matchesSearch = game.sport
     .toLowerCase()
@@ -28,6 +31,7 @@ function Matches() {
   return matchesSearch && matchesSkill && matchesDate;
 });
 
+   // Increase the player count when a user joins an available match
   function handleJoinMatch(matchId) {
     setMatches((currentMatches) =>
       currentMatches.map((match) => {

@@ -1,5 +1,6 @@
 import Button from "./Button";
 function MatchCard({ match, onJoinMatch }) {
+  // Set the button text based on the match's current status
   let buttonText = "Join Match";
 
   if (match.joined) {

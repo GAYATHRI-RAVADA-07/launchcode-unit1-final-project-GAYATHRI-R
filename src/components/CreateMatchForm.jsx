@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 
 function CreateMatchForm({ onCreateMatch }) {
+  // Get today's date to prevent users from creating matches in the past
   const today = new Date().toISOString().split("T")[0];
 
   const [sport, setSport] = useState("");
@@ -14,6 +15,7 @@ function CreateMatchForm({ onCreateMatch }) {
   const [organizer, setOrganizer] = useState("");
   const [error, setError] = useState("");
 
+  // Validate the match date and player limits before creating the match
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -28,7 +30,7 @@ function CreateMatchForm({ onCreateMatch }) {
     }
 
     setError("");
-
+    // Create a new match object using the submitted form data
     const newMatch = {
       id: Date.now(),
       sport,
@@ -43,6 +45,7 @@ function CreateMatchForm({ onCreateMatch }) {
 
     onCreateMatch(newMatch);
 
+    // Clear the form after the match is successfully created
     setSport("");
     setLocation("");
     setDate("");
