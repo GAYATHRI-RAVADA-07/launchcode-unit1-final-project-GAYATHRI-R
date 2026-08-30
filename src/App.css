@@ -236,6 +236,12 @@
   background-color: var(--white);
 }
 
+.no-matches {
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
 
 /*Matches list*/
 

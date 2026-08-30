@@ -92,7 +92,12 @@ function Matches() {
       <section className="matches-list-section">
         <h2>Available Matches</h2>
 
-        <MatchList games={filteredMatches} onJoinMatch={handleJoinMatch} />
+        {filteredMatches.length === 0 ? (
+          <p className="no-matches">No matches found. Try a different search or skill level.</p>
+        ) : (
+          <MatchList games={filteredMatches} onJoinMatch={handleJoinMatch} />
+        )}
+
       </section>
     </main>
   );
